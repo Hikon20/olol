@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="logo">
+                <!--
+                    L'élément HTML <img> permet de représenter une image dans un document. Cet élément est un élément remplacé.
+                    La propriété HTMLImageElement alt fournit un texte de remplacement (alternatif) à afficher lorsque l'image spécifiée par l'élément <img> n'est pas chargée. Cela peut être le cas en raison d'une erreur, parce que l'utilisateur a désactivé le chargement des images, ou parce que l'image n'a tout simplement pas encore terminé le chargement.
+                L'attribut title="" permet de préciser un titre pour l'image.
+Vous ne l'avez pas vu s'afficher ? passez donc votre souris sur l'image !
+                -->
+                <img class="logo-img" src="img/logo.png" alt="mon logo ">
+            </div>
+        </div>
+        <div class="diapo">
+            <img src="img/big-image.jpg" alt="img">
+        </div>
+        <div class="main-menu" id="menu">
+            <!--
+                L'élément HTML <input> est utilisé pour créer un contrôle interactif dans un formulaire web qui permet à l'utilisateur de saisir des données. Les saisies possibles et le comportement de l'élément <input> dépend fortement de la valeur indiquée dans son attribut type.
+                L'attribut universel id définit un identifiant qui doit être unique pour l'ensemble du document. Le but de cet attribut est de pouvoir identifier un élément lorsqu'on crée un lien, avec un fragment et qu'on souhaite le manipuler avec un script ou qu'on le met en forme avec CSS.
+            -->
+            <input class="menu-btn" type="checkbox" name="" id="menu-btn">
+            <!--
+                L'élément HTML <label> représente une légende pour un objet d'une interface utilisateur. Il peut être associé à un contrôle en utilisant l'attribut for ou en plaçant l'élément du contrôle à l'intérieur de l'élément <label>. Un tel contrôle est appelé contrôle étiqueté par l'élément <label>.
+            -->
+            <label class="menu-icon" for="menu-btn">
+                <span class="navicon"></span>
+            </label>
+            <ul class="menu clearfix">
+                <li><a href="#">home</a></li>
+                <li><a href="#">home2</a></li>
+                <li><a href="#">home3</a></li>
+                <li><a href="#">home4</a></li>
+            </ul>
+        </div>
+        <div class="contact">
+            <form class="from-contact" action="" id="form-contact" method="POST">
+                <label for="nom">Nom : </label>
+                <input type="text" name="nom" id="nom" placeholder="Nom" required>
+                <label for="adresse">Adresse : </label>
+                <input type="text" name="adresse" minlength="2" maxlength="45" id="adresse" placeholder="adresse ">
+                <label for="ville">Ville : </label>
+                <input type="text" name="ville" id="ville" placeholder="ville">
+                <label for="cp">cp : </label>
+                <input type="text" name="cp" id="cp" minlength="5" maxlength="5" placeholder="cp">
+                <label for="tel">Telephone : </label>
+                <input type="tel" name="tel" id="tel" placeholder="06 00 00 00 00">
+                <label for="email">email : </label>
+                <input type="email" name="email" id="email" placeholder="email@email.fr">
+                <input type="submit" value="valide" onclick="ajouterGarage()">
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // function savefile
+        function ajouterGarage() {
+            //La méthode  preventDefault() de l 'interface Event indique à 
+            //l'agent utilisateur que si l'événement n'est pas traité 
+            //explicitement, son action par défaut ne doit pas être prise 
+            //en compte comme elle le serait normalement. 
+            //L'événement continue à se propager comme d'habitude, sauf 
+            //si l'un de ses écouteurs appelle stopPropagation() ou 
+            //stopImmediatePropagation() , dont l'un ou l'autre termine 
+            //la propagation.
+            event.preventDefault();
+            // get the data from each element on the form 
+            const nom = document.getElementById('nom').value;
+            const adresse = document.getElementById('adresse').value;
+            const cp = document.getElementById('cp').value;
+            const ville = document.getElementById('ville').value;
+            const tel = document.getElementById('tel').value;
+            const email = document.getElementById('email').value;
+
+
+            var data = "nom=" + nom + "&adresse=" + adresse + "&cp=" + cp + "&ville=" + ville + "&tel=" + tel + "&email=" + email;
+
+            console.log(data);
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                // readyState est une propriété de document 
+                //qui décrit l'état de chargement du document.
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(JSON.parse(this.responseText));
+                }
+            };
+
+            xhttp.open("POST", "http://localhost:3000/garage/ajoute", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send(data);
+
+        }
+    </script>
+
+</body>
+
+</html>

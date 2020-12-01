@@ -1,0 +1,22 @@
+{
+    "name": "node-js",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "sophie",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "1.15.2",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "mysql2": "^1.6.1",
+        "nodemon": "1.18.4",
+        "sequelize": "^6.3.3",
+        "jsonwebtoken": "7.4.2",
+        "bcrypt": "^3.0.6"
+    }
+}

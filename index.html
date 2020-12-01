@@ -1,0 +1,175 @@
+<!--
+    En HTML, le doctype est le préambule "<! DOCTYPE html>" 
+    requis en haut de tous les documents. 
+    Son seul but est d'empêcher un navigateur 
+    de passer en soi-disant “quirks mode” 
+    lors du rendu d'un document ;  
+    c'est-à-dire que le doctype "<!DOCTYPE html>" 
+    garantit que le navigateur fait de son mieux pour s
+    uivre les spécifications pertinentes, 
+    plutôt que d'utiliser un mode de rendu 
+    différent incompatible avec certaines spécifications.
+-->
+<!DOCTYPE html>
+<!-- HyperText Markup Language -->
+<html lang="fr">
+<!--
+    Le contenu de l'en-tête HTML <head> — à la difference du contenu de l'élément <body> (affiché quand la page est chargée par le navigateur) — n'est pas affiché dans la page du navigateur. Le travail de la balise <head> est de contenir les métadonnées à propos du document.
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <!--
+        Un élément de fenêtre <meta> donne au navigateur des instructions sur la façon de contrôler les dimensions et la mise à l'échelle de la page.
+        La partie width = device-width définit la largeur de la page pour suivre la largeur d'écran de l'appareil (qui variera en fonction de l'appareil).
+        La partie initiale-échelle = 1.0 définit le niveau de zoom initial lors du premier chargement de la page par le navigateur.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="keywords" content="motclé1 motclé2">
+    <meta name="description" content="la description du site web">
+    <meta name="author" content="muhammad ">
+    <!--
+        La balise <title> est obligatoire dans tous les documents HTML et définit le titre du document.L'élément <title>:
+        définit un titre dans la barre d'outils du navigateur
+        fournit un titre à la page lorsqu'elle est ajoutée aux favoris
+        affiche un titre pour la page dans les résultats des moteurs de recherche
+    -->
+    <title>Cour HTML</title>
+    <!--
+    L'élément HTML External Resource Link (<link>) spécifie les relations entre le document actuel et une ressource externe. Cet élément est le plus souvent utilisé pour créer un lien vers des feuilles de style, mais est également utilisé pour établir des icônes de site (à la fois des icônes de style "favicon" et des icônes pour l'écran d'accueil et les applications sur les appareils mobiles) entre autres.
+    -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<!--
+    L'élément <body> représente le contenu principal du document HTML. Il ne peut y avoir qu'un élément <body> par document.
+-->
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="logo">
+                <!--
+                    L'élément HTML <img> permet de représenter une image dans un document. Cet élément est un élément remplacé.
+                    La propriété HTMLImageElement alt fournit un texte de remplacement (alternatif) à afficher lorsque l'image spécifiée par l'élément <img> n'est pas chargée. Cela peut être le cas en raison d'une erreur, parce que l'utilisateur a désactivé le chargement des images, ou parce que l'image n'a tout simplement pas encore terminé le chargement.
+                L'attribut title="" permet de préciser un titre pour l'image.
+Vous ne l'avez pas vu s'afficher ? passez donc votre souris sur l'image !
+                -->
+                <img class="logo-img" src="img/logo.png" alt="mon logo ">
+            </div>
+        </div>
+        <div class="diapo">
+            <img src="img/big-image.jpg" alt="img">
+        </div>
+        <div class="main-menu" id="menu">
+            <!--
+                L'élément HTML <input> est utilisé pour créer un contrôle interactif dans un formulaire web qui permet à l'utilisateur de saisir des données. Les saisies possibles et le comportement de l'élément <input> dépend fortement de la valeur indiquée dans son attribut type.
+                L'attribut universel id définit un identifiant qui doit être unique pour l'ensemble du document. Le but de cet attribut est de pouvoir identifier un élément lorsqu'on crée un lien, avec un fragment et qu'on souhaite le manipuler avec un script ou qu'on le met en forme avec CSS.
+            -->
+            <input class="menu-btn" type="checkbox" name="" id="menu-btn">
+            <!--
+                L'élément HTML <label> représente une légende pour un objet d'une interface utilisateur. Il peut être associé à un contrôle en utilisant l'attribut for ou en plaçant l'élément du contrôle à l'intérieur de l'élément <label>. Un tel contrôle est appelé contrôle étiqueté par l'élément <label>.
+            -->
+            <label class="menu-icon" for="menu-btn">
+                <span class="navicon"></span>
+            </label>
+            <ul class="menu clearfix">
+                <li><a href="#">home</a></li>
+                <li><a href="#">home2</a></li>
+                <li><a href="#">home3</a></li>
+                <li><a href="#">home4</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="about clearfix">
+                <img src="img/image1.jpg" alt="mon img">
+                <div class="texte">
+                    <h2>About</h2>
+                    <p id="about">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non possimus eum ipsam quasi vel quam excepturi sed, officiis deleniti quos ullam assumenda nisi magnam. A commodi hic est in ipsum.
+                    </p>
+                </div>
+            </div>
+
+            <div class="work">
+                <h2>Recent work</h2>
+                <div class="gallery clearfix">
+                    <div class="row-image clearfix">
+                        <img id="img1" src="img/photo1.jpg" alt="mon img">
+                        <img src="img/photo2.jpg" alt="mon img">
+                        <img src="img/photo3.jpg" alt="mon img">
+                        <img src="img/photo4.jpg" alt="mon img">
+                    </div>
+                    <div class="row-image clearfix">
+                        <img id="img2" src="img/photo1.jpg" alt="mon img">
+                        <img src="img/photo2.jpg" alt="mon img">
+                        <img src="img/photo3.jpg" alt="mon img">
+                        <img src="img/photo4.jpg" alt="mon img">
+                    </div>
+                </div>
+
+                <div class="min-div">
+                    <div class="art2">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, aspernatur. Rerum reprehenderit ut, odit soluta id quod consequuntur minus porro. Praesentium distinctio cupiditate possimus? Maiores eos consequuntur aliquam commodi!
+                            Explicabo?
+                        </p>
+                        <a href="#" class="art-btn">teste</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, dolorem, adipisci voluptates voluptatum id nesciunt fuga repudiandae nisi perferendis qui eligendi sunt. Eius odit distinctio, nobis animi qui corporis harum.
+            </p>
+            <p class="p2">
+                <button onclick="test()">test</button> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolores eius quam doloribus, necessitatibus fugiat. Odit, porro hic voluptatibus culpa quae expedita cumque dignissimos error quod,
+                quibusdam obcaecati, fuga tenetur?
+            </p>
+        </div>
+    </div>
+    <script>
+        /*fonction normal*/
+        function test() {
+            /* créer une instance de HttpRequest via le XML (langage)*/
+            /*
+                        Les objets XMLHttpRequest (XHR) 
+                        permettent d'interagir avec des 
+                        serveurs. 
+                        On peut récupérer des données 
+                        à partir d'une URL sans avoir 
+                        à rafraîchir complètement la page. 
+                        Cela permet à une page web d'être 
+                        mise à jour sans perturber les 
+                        actions de l'utilisateur. 
+                        XMLHttpRequest est beaucoup utilisé par l'approche AJAX.
+                        */
+            var xhttp = new XMLHttpRequest();
+            /* prépare toi au changement de statut à faire les fonction suivantes*/
+            /*function() veut dire fonction anonyme*/
+            xhttp.onreadystatechange = function() {
+                    //readyState est une propiété de document
+                    //qui décrit le chargement du document.
+                    if (this.readyState == 4 && this.status == 200) {
+                        var data = JSON.parse(this.responseText)
+                        console.log(data);
+                        for (let index = 0; index < data.garage.length; index++) {
+                            console.log(data.garage[index]);
+                        }
+                    }
+                }
+                //ouvrir la request
+            xhttp.open("GET", "http://localhost:3000/garage/All", true);
+            //renvoie la réponse en type json
+            xhttp.setRequestHeader("Content-type", "application/json");
+            //Je te renvoie rien en body            
+            xhttp.send(null);
+        }
+        /*fonction fleché*/
+        let test1 = () => {}
+    </script>
+</body>
+
+</html>
